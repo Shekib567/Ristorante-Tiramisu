@@ -43,9 +43,14 @@ const toggleNavbar = function () {
   document.body.classList.toggle("nav-active");
 }
 
+const closeNavbar = function () {
+  navbar.classList.remove("active");
+  overlay.classList.remove("active");
+  document.body.classList.remove("nav-active");
+}
+
 addEventOnElements(navTogglers, "click", toggleNavbar);
-
-
+addEventOnElements(navbar.querySelectorAll(".navbar-link"), "click", closeNavbar);
 
 /**
  * HEADER & BACK TOP BTN
